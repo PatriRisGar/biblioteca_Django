@@ -1,0 +1,14 @@
+{% extends "biblioteca/base.html" %} {% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <h2>{{ book.title }}</h2>
+    <div>
+      <img src="{{ book.cover.url }}" alt="cover" />
+      <p>Autor: {{ book.authors }}</p>
+      <p>ISBN: {{ book.isbn }}</p>
+    </div>
+    <input type="submit" value="Confirmar devolucion" />
+  </div>
+</form>
+{% endblock %}
